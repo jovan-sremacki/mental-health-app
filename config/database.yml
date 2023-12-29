@@ -1,0 +1,16 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: <%= ENV['DATABASE_USERNAME'] || 'mentalhealth' %>
+  password: <%= ENV['DATABASE_PASSWORD'] || '123456' %>
+
+development:
+  <<: *default
+  database: mentalhealth_development
+  host: <%= ENV['DATABASE_HOST'] || 'localhost' %>
+
+test:
+  <<: *default
+  database: mentalhealth_test
+  host: <%= ENV['TEST_DATABASE_HOST'] || 'localhost' %>
