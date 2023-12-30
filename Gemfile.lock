@@ -90,11 +90,31 @@ GEM
       reline (>= 0.3.8)
     drb (2.2.0)
       ruby2_keywords
+    dry-core (1.0.1)
+      concurrent-ruby (~> 1.0)
+      zeitwerk (~> 2.6)
+    dry-inflector (1.0.0)
+    dry-logic (1.5.0)
+      concurrent-ruby (~> 1.0)
+      dry-core (~> 1.0, < 2)
+      zeitwerk (~> 2.6)
+    dry-struct (1.6.0)
+      dry-core (~> 1.0, < 2)
+      dry-types (>= 1.7, < 2)
+      ice_nine (~> 0.11)
+      zeitwerk (~> 2.6)
+    dry-types (1.7.1)
+      concurrent-ruby (~> 1.0)
+      dry-core (~> 1.0)
+      dry-inflector (~> 1.0)
+      dry-logic (~> 1.4)
+      zeitwerk (~> 2.6)
     erubi (1.12.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
+    ice_nine (0.11.2)
     io-console (0.7.1)
     irb (1.11.0)
       rdoc
@@ -235,6 +255,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   debug
+  dry-struct
   pg
   puma (>= 5.0)
   rails (~> 7.1.2)
