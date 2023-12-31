@@ -1,0 +1,38 @@
+version: '3'
+services:
+  db:
+    image: postgres
+    volumes:
+      - ./tmp/db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: mentalhealth_development
+      POSTGRES_USER: mentalhealth
+      POSTGRES_PASSWORD: 123456
+    ports:
+      - "5432:5432"
+  test_db:
+    image: postgres:latest
+    volumes:
+      - test_postgres_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: mentalhealth_test
+      POSTGRES_USER: myapp
+      POSTGRES_PASSWORD: 123456
+    ports:
+      - "5433:5432"
+  api:
+    build: .
+    command: bundle exec hanami server
+    volumes:
+      - .:/api
+    ports:
+      - "2300:2300"
+    depends_on:
+      - db
+    environment:
+      DATABASE_HOST: db
+      TEST_DATABASE_HOST: test_db
+      DATABASE_USERNAME: mentalhealth
+      DATABASE_PASSWORD: 123456
+volumes:
+  test_postgres_data:
