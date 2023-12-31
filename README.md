@@ -31,13 +31,13 @@ This is the MVP for a Mental Health Support Network Application designed to prov
 
 ## Getting Started with Makefile Commands
 
-The included Makefile simplifies Docker and Rails commands:
+The included Makefile simplifies Docker and Hanami commands:
 
 - **Start Docker Containers**: `make up`
 - **Stop Docker Containers**: `make down`
 - **Rebuild Docker Containers**: `make build`
 - **Migrate Database**: `make migrate`
-- **Open Rails Console**: `make console`
+- **Open Hanami Console**: `make console`
 - **Access PostgreSQL CLI**: `make psql`
 - **Access PostgreSQL CLI for Testing**: `make psql-test`
 
@@ -57,7 +57,7 @@ The included Makefile simplifies Docker and Rails commands:
    make migrate
    ```
 
-3. **Accessing Rails Console**
+3. **Accessing Hanami Console**
 
    ```bash
    make console
