@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 module MentalHealthApp
+  # Settings class
   class Settings < Hanami::Settings
     # Define your app settings here, for example:
     #

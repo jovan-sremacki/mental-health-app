@@ -3,11 +3,12 @@
 module MentalHealthApp
   module Actions
     module Users
+      # Action for displaying users
       class Index < MentalHealthApp::Action
         def handle(*, response)
           users = [
-            { "name" => "Jovan" },
-            { "name" => "Marko" }
+            { 'name' => 'Jovan' },
+            { 'name' => 'Marko' }
           ]
 
           response.format = :json
