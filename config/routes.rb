@@ -4,6 +4,9 @@ module MentalHealthApp
   # Routes class
   class Routes < Hanami::Routes
     root { 'Hello from Hanami' }
-    get '/users', to: 'users.index'
+
+    slice :users, at: '/users' do
+      get '/show', to: 'index'
+    end
   end
 end

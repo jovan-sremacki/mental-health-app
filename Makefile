@@ -20,6 +20,9 @@ bundle-install:
 console:
 	docker-compose exec api hanami console
 
+console-test:
+	docker-compose exec api env HANAMI_ENV=test hanami console
+
 action-generate:
 	docker-compose exec api bundle exec hanami generate action $(action_name)
 
