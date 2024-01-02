@@ -3,7 +3,7 @@
 
 require 'hanami/action'
 
-module MentalHealthApp
+module Users
   class Action < Hanami::Action
   end
 end

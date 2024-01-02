@@ -1,11 +1,14 @@
 # frozen_string_literal: true
 
-require "dry/types"
+require 'dry/types'
 
 module MentalHealthApp
   Types = Dry.Types
 
   module Types
-    # Define your custom types here
+    MEMBER = 'member'
+    THERAPIST = 'therapist'
+
+    Role = Types::String.default(MEMBER).enum(MEMBER => 0, THERAPIST => 1).freeze
   end
 end

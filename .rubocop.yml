@@ -1,0 +1,47 @@
+AllCops:
+  NewCops: enable
+  TargetRubyVersion: 3.0
+  DisplayCopNames: true
+
+# Documentation is not required for every method.
+Style/Documentation:
+  Enabled: false
+
+# Use single quotes by default.
+Style/StringLiterals:
+  EnforcedStyle: single_quotes
+
+# Allow if-else-end structures instead of ternary operators.
+Style/TernaryParentheses:
+  Enabled: false
+
+# Allow local variables and method parameters to be named freely.
+Naming/VariableNumber:
+  Enabled: false
+
+# Enforce consistent method naming.
+Naming/MethodName:
+  EnforcedStyle: snake_case
+
+# Exclude certain methods from ABC size metrics
+# Metrics/AbcSize:
+#   Exclude:
+#     - 'config/environments/**/*'
+
+# Exclude certain methods from method length metrics
+Metrics/MethodLength:
+  Max: 15
+  Exclude:
+    - 'db/migrate/**/*'
+
+# Allow higher complexity for models
+Metrics/ClassLength:
+  Max: 150
+
+Layout/IndentationWidth:
+  Enabled: true
+  Width: 2
+
+Layout/FirstArrayElementIndentation:
+  Enabled: true
+  EnforcedStyle: consistent
